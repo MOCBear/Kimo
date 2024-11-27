@@ -1,11 +1,11 @@
 @charset "UTF-8";
 /*
- * @Description: 按钮样式，（感谢https://github.com/uiverse-io 项目）
- * @version: V_0.1
+ * @Description: 按钮样式，（感谢https://github.com/uiverse-io  项目）
+ * @version: V_0.1.1
  * @Author: LinkMoe
  * @Date: 2024-11-26 17:28:21
  * @LastEditors: LinkMoe
- * @LastEditTime: 2024-11-27 20:19:08
+ * @LastEditTime: 2024-11-27 21:09:21
  */
 /**
  * @功能描述: 注册按钮
@@ -32,6 +32,7 @@ body {
 .blob-btn {
   z-index: 1;
   position: relative;
+  display: inline-block;
   padding: 20px 46px;
   margin-bottom: 30px;
   text-align: center;
@@ -132,6 +133,12 @@ body {
 @supports (filter: url("#goo")) {
   .blob-btn:hover .blob-btn__blob {
     transform: translateZ(0) scale(1.4);
+  }
+}
+
+@media (max-width: 768px) {
+  .blob-btn {
+    padding: 15px 30px;
   }
 }
 
