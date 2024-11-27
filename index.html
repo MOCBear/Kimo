@@ -1,0 +1,97 @@
+<!--
+ * @Description: 主要框架。
+ * @version: V_0.1
+ * @Author: LinkMoe 
+ * @Date: 2024-11-26 17:27:57 
+ * @LastEditors: LinkMoe
+ * @LastEditTime: 2024-11-27 20:53:26
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 指定字符编码为UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- 视口设置，确保网页在不同设备上保持合适的缩放比例 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 页面标题 -->
+    <title>Dynamic Header Website</title>
+    <!-- 引入外部CSS文件，用于页面样式 -->
+    <link rel="stylesheet" href="css3/topbar.css">
+    <!-- 引入登录按钮的样式 -->
+    <link rel="stylesheet" href="css3/button/signin.css">
+    <script>
+        // JavaScript函数，用于检测用户代理（User Agent）是否包含移动设备的特征字符串
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        // 直接执行的JavaScript代码，用于在移动端设备上重定向到移动端网页
+        if (isMobile()) {
+            // 重定向到移动端网页，注意这里的URL应该替换为实际的移动端网页地址
+            window.location.href = 'https://m.home.milkysky.cn';  // 修正了HTML实体
+        }
+    </script>
+</head>
+<body>
+    <!-- 页面头部区域，包含动态头部内容 -->
+    <header id="dynamicHeader">
+        <div class="header-content">
+            <!-- 网站Logo -->
+            <div class="logo">Logo</div>
+            <!-- 导航链接区域 -->
+            <nav class="nav-links">
+                <!-- 导航链接 -->
+            </nav>
+            <!-- 用户操作区域，包含头像和登录按钮 -->
+            <div class="user-actions">
+                <!-- 用户头像 -->
+                <img src="media/img/avatar.jpg" alt="Avatar" class="avatar">
+                <!-- 登录区域，包含一个按钮和SVG滤镜效果 -->
+                <div class="signin">
+                    <button class="blob-btn">
+                      Sign In
+                      <!-- 登录按钮内部结构，包含一个内层span和SVG滤镜效果 -->
+                      <span class="blob-btn__inner">
+                        <span class="blob-btn__blobs">
+                          <!-- 四个用于创建视觉效果的span元素 -->
+                          <span class="blob-btn__blob"></span>
+                          <span class="blob-btn__blob"></span>
+                          <span class="blob-btn__blob"></span>
+                          <span class="blob-btn__blob"></span>
+                        </span>
+                      </span>
+                    </button>
+                    <br />                 
+                    <!-- SVG滤镜定义，用于创建高斯模糊效果 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+                      <defs>
+                        <filter id="goo">
+                          <!-- 高斯模糊滤镜效果 -->
+                          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+                          <!-- 颜色矩阵滤镜效果 -->
+                          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+                          <!-- 混合滤镜效果 -->
+                          <feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+                        </filter>
+                      </defs>
+                    </svg>
+                </div>
+                <!-- 抽屉菜单按钮 -->
+                <button class="drawer-btn">☰</button>
+            </div>
+        </div>
+    </header>
+    <!-- 抽屉菜单区域 -->
+    <div class="drawer-menu">
+        <!-- 抽屉菜单内容 -->
+        <ul>
+            <li>Menu Item 1</li>
+            <li>Menu Item 2</li>
+            <li>Menu Item 3</li>
+        </ul>
+    </div>
+    <!-- 引入顶部栏的JavaScript文件，注意这里应该引用编译后的JavaScript文件 -->
+    <script src="topbar/topbar.js"></script>
+</body>
+</html>
