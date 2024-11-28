@@ -1,0 +1,103 @@
+/*
+ * @Description: 
+ * @version: 
+ * @Author: LinkMoe
+ * @Date: 2024-11-26 17:56:24
+ * @LastEditors: LinkMoe
+ * @LastEditTime: 2024-11-27 21:42:28
+ */
+
+/* 基本重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+}
+
+/* 毛玻璃效果 */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5); /* 初始背景颜色 */
+    backdrop-filter: blur(10px); /* 初始模糊效果 */
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
+    z-index: 1000;
+    height: 60px; /* 初始高度 */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-btn {
+    display: block; /* 初始显示 */
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* 抽屉菜单 */
+.drawer-menu {
+    display: none; /* 初始隐藏 */
+    flex-grow: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.drawer-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.drawer-menu li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    text-align: center;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.signin-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* 响应式和动态效果 */
+@media (min-width: 768px) {
+    .sidebar-btn {
+        display: none;
+    }
+    .drawer-menu {
+        display: flex;
+    }
+}
